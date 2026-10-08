@@ -78,6 +78,7 @@ cs2lm install <plugin>
 ## 说明
 
 - 所有包均通过 `cs2lm add --pkg` 验证(可正常注册并生成 manifest)。
+- **兼容性**:2026-10-09 版 cs2-link-manager 已修复 `split_css_plugins` 对 `configs/` 目录的假设 bug,并新增版本自动检测;本仓库全部包(含多插件包)已**原生验证通过**。
 - `ByDexterTR-All.cs2pkg` 包含 `.Compiled` 中全部 46 个插件的编译产物,一键安装全部插件。
 - `CS2-SimpleAdmin.cs2pkg` 是 SimpleAdmin 官方 Release 的完整多插件包(主插件 + FunCommands + StealthModule)。
 - 多插件包在 `cs2lm add --pkg` 时按 `plugins` 字段自动拆分,每个插件独立安装/卸载/更新。
