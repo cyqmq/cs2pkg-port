@@ -9,6 +9,8 @@ cs2lm install <plugin>
 ```
 
 > `.cs2pkg` 是 cs2-link-manager 的标准插件包格式(zip 内含 `cs2pkg.json` + `addons/` 树)。
+> 本仓库的包采用**扩展格式**:`cs2pkg.json` 含 `author`/`description`/`license`/`homepage`/`repository`/`dependencies`/`plugins` 字段。
+> 多插件包(`ByDexterTR-All`、`CS2-SimpleAdmin`)通过 `plugins` 字段声明目录,`cs2lm add --pkg` 会自动拆成多个仓库条目。
 
 ## 来自 ByDexterTR/CS2Plugins
 
@@ -62,7 +64,7 @@ cs2lm install <plugin>
 | Thirdperson | [ByDexterTR/CS2Plugins](https://github.com/ByDexterTR/CS2Plugins) | 1.0.0 | `Thirdperson.cs2pkg` |
 | VIPCore | [ByDexterTR/CS2Plugins](https://github.com/ByDexterTR/CS2Plugins) | 1.0.0 | `VIPCore.cs2pkg` |
 | WardenMarker | [ByDexterTR/CS2Plugins](https://github.com/ByDexterTR/CS2Plugins) | 1.0.0 | `WardenMarker.cs2pkg` |
-| **ByDexterTR-All** (46 个插件全量包) | [ByDexterTR/CS2Plugins](https://github.com/ByDexterTR/CS2Plugins) | 1.0.0 | `ByDexterTR-All.cs2pkg` |
+| **ByDexterTR-All** (46 个插件全量包,多插件包) | [ByDexterTR/CS2Plugins](https://github.com/ByDexterTR/CS2Plugins) | 1.0.0 | `ByDexterTR-All.cs2pkg` |
 
 ## 来自 awesome-cs2
 
@@ -71,11 +73,13 @@ cs2lm install <plugin>
 | 插件 | 原仓库 | 移植版本 | 包文件 |
 | --- | --- | --- | --- |
 | cs2-retakes | [B3none/cs2-retakes](https://github.com/B3none/cs2-retakes) | 3.1.1 | `cs2-retakes.cs2pkg` |
-| CS2-SimpleAdmin | [daffyyyy/CS2-SimpleAdmin](https://github.com/daffyyyy/CS2-SimpleAdmin) | 1.9.0 | `CS2-SimpleAdmin.cs2pkg` |
+| CS2-SimpleAdmin (含主插件 + FunCommands + StealthModule 三个插件目录) | [daffyyyy/CS2-SimpleAdmin](https://github.com/daffyyyy/CS2-SimpleAdmin) | 1.9.0 | `CS2-SimpleAdmin.cs2pkg` |
 
 ## 说明
 
 - 所有包均通过 `cs2lm add --pkg` 验证(可正常注册并生成 manifest)。
 - `ByDexterTR-All.cs2pkg` 包含 `.Compiled` 中全部 46 个插件的编译产物,一键安装全部插件。
+- `CS2-SimpleAdmin.cs2pkg` 是 SimpleAdmin 官方 Release 的完整多插件包(主插件 + FunCommands + StealthModule)。
+- 多插件包在 `cs2lm add --pkg` 时按 `plugins` 字段自动拆分,每个插件独立安装/卸载/更新。
 - 插件版权归各自作者所有;本仓库仅做格式转换与分发。
 
