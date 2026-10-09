@@ -29,7 +29,7 @@ cs2lm update CS2-SimpleAdmin
 
 - `index.json` 位于仓库根目录,每次发 Release 后同步更新。
 - 每个条目包含 `version` / `download_url`(Release 资产直链)/ `sha256` / `size` / `author` / `description`,包体下载后自动校验 sha256 与包内 `cs2pkg.json` 身份一致性。
-- 索引覆盖 **77 个插件**:46 个 ByDexterTR 单插件 + `CS2-SimpleAdmin`(主插件)+ `CS2-SimpleAdmin_FunCommands` + `CS2-SimpleAdmin_StealthModule` + `cs2-retakes` + **27 个从真实源仓库移植的插件**(见下节)。
+- 索引覆盖 **78 个条目**:46 个 ByDexterTR 单插件 + `CS2-SimpleAdmin`(主插件)+ `CS2-SimpleAdmin_FunCommands` + `CS2-SimpleAdmin_StealthModule` + `cs2-retakes` + **27 个从真实源仓库移植的插件** + **1 个游戏内容包**(CS2-Bot-Improver,见下节)。
 - `ByDexterTR-All.cs2pkg` 与 `dist/from-sources/bundles/` 下的多插件包是手工安装用全量包,不进索引(个体插件均可独立更新)。
 - 插件与**真实上游源仓库**的对应关系见 [`SOURCES.md`](SOURCES.md)(含仓库实况/兼容性甄别)。
 
@@ -131,6 +131,14 @@ cs2lm update CS2-SimpleAdmin
 | RollTheDice | [Quantor97/CS2-RollTheDice-Plugin](https://github.com/Quantor97/CS2-RollTheDice-Plugin) | 1.0.0 | `RollTheDice.cs2pkg` |
 | simplediscordrelay | [Tsukasa-Nefren/simplediscordrelay](https://github.com/Tsukasa-Nefren/simplediscordrelay) | 1.0.0 | `simplediscordrelay.cs2pkg` |
 | VoteSystem | [KingBroo/VoteSystem](https://github.com/KingBroo/VoteSystem) | 1.0.0 | `VoteSystem.cs2pkg` |
+
+## 游戏内容包(kind: content)
+
+CS2-Bot-Improver 是一个**全家桶式游戏内容 mod**（Metamod + CounterStrikeSharp 混合框架），通过 `kind: "content"` 格式打包，支持 `roots` 多根目录映射、`requires_frameworks` 框架依赖声明和 `platform` 平台字段。
+
+| 内容包 | 原仓库 | 版本 | 包文件 | 说明 |
+| --- | --- | --- | --- | --- |
+| CS2-Bot-Improver | [ed0ard/CS2-Bot-Improver](https://github.com/ed0ard/CS2-Bot-Improver) | 1.4.5 | `CS2-Bot-Improver.cs2pkg` | 9 个 CSS 插件 + 3 个 Metamod 插件 + cfg/overrides/backup/gameinfo.gi；需预装 Metamod + CSS 框架 |
 
 ## 说明
 
