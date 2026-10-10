@@ -28,7 +28,7 @@ cs2lm update CS2-SimpleAdmin
 ```
 
 - `index.json` 位于仓库根目录,每次发 Release 后同步更新。
-- 每个条目包含 `version` / `download_url`(Release 资产直链)/ `sha256` / `size` / `author` / `description`,包体下载后自动校验 sha256 与包内 `cs2pkg.json` 身份一致性。
+- 每个条目包含 `version` / `download_url`(Release 资产直链)/ `sha256` / `size` / `author` / `description` / `category`(热门插件),包体下载后自动校验 sha256 与包内 `cs2pkg.json` 身份一致性。
 - 索引覆盖 **78 个条目**:46 个 ByDexterTR 单插件 + `CS2-SimpleAdmin`(主插件)+ `CS2-SimpleAdmin_FunCommands` + `CS2-SimpleAdmin_StealthModule` + `cs2-retakes` + **27 个从真实源仓库移植的插件** + **1 个游戏内容包**(CS2-Bot-Improver,见下节)。
 - `ByDexterTR-All.cs2pkg` 与 `dist/from-sources/bundles/` 下的多插件包是手工安装用全量包,不进索引(个体插件均可独立更新)。
 - 插件与**真实上游源仓库**的对应关系见 [`SOURCES.md`](SOURCES.md)(含仓库实况/兼容性甄别)。
